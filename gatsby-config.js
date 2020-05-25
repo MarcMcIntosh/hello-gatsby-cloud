@@ -39,6 +39,15 @@ module.exports = {
         repositoryName: 'gatsby-hello',
         // prismicToolbar: true,
         linkResolver,
+
+        schemas: {
+          // Your custom types mapped to schemas
+          homepage: require("./src/schemas/homepage.json"),
+          about: require('./src/schemas/about.json'),
+          contact: require("./src/schemas/contact.json"),
+          blog_post: require("./src/schemas/blog_post.json"),
+          footer: require("./src/schemas/footer.json"),
+        },
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
