@@ -45,6 +45,7 @@ const IndexPage = ({ data }) => {
   return (<Layout>
     <SEO title="Home" />
     <h1>{homePageData.title.text}</h1>
+    <h2>Build on {new Date()}</h2>
 
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>

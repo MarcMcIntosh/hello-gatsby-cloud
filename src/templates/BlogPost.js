@@ -24,6 +24,7 @@ const BlogPost = ({ data }) => {
     return (
         <Layout>
             <RichText render={data.prismicBlogPost.data.ritchtext.raw} />
+            <h2>Built on {new Date()}</h2>
         </Layout>
     )
 }
