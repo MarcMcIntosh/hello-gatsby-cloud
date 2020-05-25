@@ -33,13 +33,9 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        // The name of your prismic.io repository. This is required.
-        // Example: 'gatsby-source-prismic-test-site' if your prismic.io address
-        // is 'gatsby-source-prismic-test-site.prismic.io'.
+        // Could be a env variable
         repositoryName: 'gatsby-hello',
-        // prismicToolbar: true,
         linkResolver,
-
         schemas: {
           // Your custom types mapped to schemas
           homepage: require("./src/schemas/homepage.json"),
@@ -50,8 +46,5 @@ module.exports = {
         },
       }
     }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
