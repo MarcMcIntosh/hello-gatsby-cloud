@@ -1,3 +1,6 @@
+const linkResolver = require("./src/prismic/linkResolver");
+
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -27,6 +30,17 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        // The name of your prismic.io repository. This is required.
+        // Example: 'gatsby-source-prismic-test-site' if your prismic.io address
+        // is 'gatsby-source-prismic-test-site.prismic.io'.
+        repositoryName: 'gatsby-hello',
+        // prismicToolbar: true,
+        linkResolver,
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
