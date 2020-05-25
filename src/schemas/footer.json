@@ -1,0 +1,41 @@
+{
+  "Main" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "uid"
+      }
+    },
+    "home" : {
+      "type" : "Link",
+      "config" : {
+        "allowTargetBlank" : true,
+        "label" : "Home",
+        "placeholder" : "Home page link"
+      }
+    },
+    "contact_link" : {
+      "type" : "Link",
+      "config" : {
+        "allowTargetBlank" : true,
+        "label" : "contact link",
+        "placeholder" : "Contact page"
+      }
+    },
+    "about_link" : {
+      "type" : "Link",
+      "config" : {
+        "allowTargetBlank" : true,
+        "label" : "about link",
+        "placeholder" : "About page link"
+      }
+    },
+    "date" : {
+      "type" : "Date",
+      "config" : {
+        "label" : "date",
+        "placeholder" : "date"
+      }
+    }
+  }
+}
