@@ -17,15 +17,16 @@ export const query = graphql`
     }
 `
 
+const TIME = new Date();
+
 const BlogPost = ({ data }) => {
     // console.log('----------blog props------------', { props })
     console.log('BlogPost.js');
     console.log({ data });
-    const timestamp = new Date();
     return (
         <Layout>
             <RichText render={data.prismicBlogPost.data.ritchtext.raw} />
-            <h2>Built on {timestamp.toISOString()}</h2>
+            <h2>Built on {TIME.toISOString()}</h2>
         </Layout>
     )
 }

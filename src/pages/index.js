@@ -38,16 +38,16 @@ export const query = graphql`{
   }
 }`;
 
+const TIME = new Date();
+
 
 const IndexPage = ({ data }) => {
   const homePageData = data.prismicHomepage.data
 
-  const timestamp = new Date()
-
   return (<Layout>
     <SEO title="Home" />
     <h1>{homePageData.title.text}</h1>
-    <h2>Built on {timestamp.toISOString()}</h2>
+    <h2>Built on {TIME.toISOString()}</h2>
 
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
