@@ -1,6 +1,6 @@
 
 
-const linkResolver = ({ node, key, value }) => doc => {
+const linkResolver = ({ node, key, value } = {}) => doc => {
     // Your link resolver
 
     const prefix = (doc.lang === "en-gb") ? "" : "/" + doc.lang
