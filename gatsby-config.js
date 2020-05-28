@@ -17,9 +17,8 @@
  * process.env.PRISMIC_RELEASE_ID="Xny9FRAAAB4AdbNo"
  * */
 
-if(process.env.GATSBY_CLOUD == false) {
-  require("dotenv").config({ path: `.env.${process.env.NODE_ENV}`});
-}
+!process.env.GATSBY_CLOUD && require("dotenv").config({ path: `.env.${process.env.NODE_ENV}`});
+
 
 const linkResolver = require("./src/prismic/linkResolver");
 
@@ -66,7 +65,7 @@ module.exports = {
         // Could be a env variable
         repositoryName: PRISMIC_REPO_NAME,
         linkResolver,
-        releaseID: GATSBY_CLOUD && NODE_ENV === 'development' && PRISMIC_RELEASE_ID,
+        releaseID: (GATSBY_CLOUD && NODE_ENV === 'development') ? PRISMIC_RELEASE_ID : undefined,
         schemas: {
           // Your custom types mapped to schemas
           homepage: require("./src/schemas/homepage.json"),
