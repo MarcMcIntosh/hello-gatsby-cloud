@@ -9,14 +9,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-
-// enable localhost:8000/__refresh to refetch data
-// process.env.ENABLE_GATSBY_REFRESH_ENDPOINT = process.env.NODE_ENV === 'development';
-
-// set to true we running in gatsby cloud
-// process.env.GATSBY_CLOUD = process.env.GATSBY_CLOUD === undefined
-
-
 const linkResolver = require("./src/prismic/linkResolver");
 
 const {
