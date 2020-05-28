@@ -7,9 +7,24 @@
 // You can delete this file if you're not using it
 const path = require('path');
 
+
+
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
 
+    // discuss when to use gatsby-previews, should we allow users to use previews locally?
+    // here we will create previews only on gatsby for a release
+    if (process.env.RELEASE_ID && process.env.GATSBY_CLOUD && process.env.NODE_ENV === 'development') {
+      createPage({
+        path: process.env.PREVIEW_PATH,
+        component: path.resolve(__dirname, 'src/templates/previews.js'),
+        context: {
+          repositoryName: process.env.PRISMIC_REPO_NAME,
+        },
+      });
+    }
+
+    
     // Query all Pages with their IDs and template data.
     const pages = await graphql(`
       {
