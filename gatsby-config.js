@@ -1,5 +1,19 @@
-const linkResolver = require("./src/prismic/linkResolver");
+/*require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})*/
 
+
+process.env.PRISMIC_REPO_NAME = 'gatsby-hello'
+// enable refreshing one changes have been made to the CMS
+process.env.ENABLE_GATSBY_REFRESH_ENDPOINT = process.env.NODE_ENV === 'development';
+// emulate gastby cloud, cloud be useful
+process.env.GATSBY_CLOUD = process.env.GATSBY_CLOUD === undefined
+// for gatsby cloud previews
+process.env.RELEASE_ID = "Xny9FRAAAB4AdbNo"
+// path for previews 
+process.env.PREVIEW_PATH = "/previews"; // prismic's default
+
+const linkResolver = require("./src/prismic/linkResolver");
 
 module.exports = {
   siteMetadata: {
@@ -34,8 +48,9 @@ module.exports = {
       resolve: 'gatsby-source-prismic',
       options: {
         // Could be a env variable
-        repositoryName: 'gatsby-hello',
+        repositoryName: process.env.PRISMIC_REPO_NAME,
         linkResolver,
+        releaseID: process.env.GATSBY_CLOUD && process.env.NODE_ENV === 'development' && process.env.RELEASE_ID,
         schemas: {
           // Your custom types mapped to schemas
           homepage: require("./src/schemas/homepage.json"),
