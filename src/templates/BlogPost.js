@@ -19,16 +19,12 @@ export const query = graphql`
 
 const TIME = new Date();
 
-const BlogPost = ({ data }) => {
-    // console.log('----------blog props------------', { props })
-    console.log('BlogPost.js');
-    console.log({ data });
-    return (
-        <Layout>
-            <RichText render={data.prismicBlogPost.data.ritchtext.raw} />
-            <h2>Built on {TIME.toISOString()}</h2>
-        </Layout>
-    )
-}
+const BlogPost = ({ data }) => (
+    <Layout>
+        <RichText render={data.prismicBlogPost.data.ritchtext.raw} />
+        <h2>Built on {TIME.toISOString()}</h2>
+    </Layout>
+)
+
 
 export default BlogPost

@@ -1,19 +1,31 @@
-/*require("dotenv").config({
+/**
+ * Load eviroment variables from either
+ * .env.production
+ * or
+ * .env.development
+ * 
+ * */
+require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})*/
+})
 
 
-process.env.PRISMIC_REPO_NAME = 'gatsby-hello'
-// enable refreshing one changes have been made to the CMS
-process.env.ENABLE_GATSBY_REFRESH_ENDPOINT = process.env.NODE_ENV === 'development';
-// emulate gastby cloud, cloud be useful
-process.env.GATSBY_CLOUD = process.env.GATSBY_CLOUD === undefined
-// for gatsby cloud previews
-process.env.RELEASE_ID = "Xny9FRAAAB4AdbNo"
-// path for previews 
-process.env.PREVIEW_PATH = "/previews"; // prismic's default
+// enable localhost:8000/__refresh to refetch data
+// process.env.ENABLE_GATSBY_REFRESH_ENDPOINT = process.env.NODE_ENV === 'development';
+
+// set to true we running in gatsby cloud
+// process.env.GATSBY_CLOUD = process.env.GATSBY_CLOUD === undefined
+
 
 const linkResolver = require("./src/prismic/linkResolver");
+
+const {
+  NODE_ENV,
+  GATSBY_CLOUD,
+
+  PRISMIC_REPO_NAME,
+  PRISMIC_RELEASE_ID,
+} = process.env;
 
 module.exports = {
   siteMetadata: {
@@ -48,9 +60,9 @@ module.exports = {
       resolve: 'gatsby-source-prismic',
       options: {
         // Could be a env variable
-        repositoryName: process.env.PRISMIC_REPO_NAME,
+        repositoryName: PRISMIC_REPO_NAME,
         linkResolver,
-        releaseID: process.env.GATSBY_CLOUD && process.env.NODE_ENV === 'development' && process.env.RELEASE_ID,
+        releaseID: GATSBY_CLOUD && NODE_ENV === 'development' && PRISMIC_RELEASE_ID,
         schemas: {
           // Your custom types mapped to schemas
           homepage: require("./src/schemas/homepage.json"),
