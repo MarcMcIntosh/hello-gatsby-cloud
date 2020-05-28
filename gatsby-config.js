@@ -4,10 +4,22 @@
  * or
  * .env.development
  * 
+ * Gatsby cloud will allow these env to be configured on their website
+ * 
+ * process.env.PRISMIC_REPO_NAME = "gatsby-hello"
+ * 
+ * process.env.PRISMIC_API_KEY="MC5Ycy1rc3hFQUFDUUFLQXUt.ImpS77-977-977-977-977-977-977-9Te-_ve-_vTvvv71fCO-_vXBl77-977-9ZHTvv73vv73vv70677-9DxBl"
+ * 
+ * For redirecting from prismic to the page on gatsby-preview
+ * process.env.PRISMIC_PREVIEW_PATH="/previews"
+ * 
+ * Release to preview
+ * process.env.PRISMIC_RELEASE_ID="Xny9FRAAAB4AdbNo"
  * */
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+
+if(process.env.GATSBY_CLOUD == false) {
+  require("dotenv").config({ path: `.env.${process.env.NODE_ENV}`});
+}
 
 const linkResolver = require("./src/prismic/linkResolver");
 
