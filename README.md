@@ -1,9 +1,9 @@
 # Prismic + Gatsby cloud integration project
 
-Test site to manually integrate prismic (CMS) with gatsby cloud.
+Test site to manually integrate prismic with gatsby cloud.
 
 
-## Init
+## Setup the project
 Init a project using gatsby cli
 ```bash
 npx gatsby new my-awesome-site
@@ -38,7 +38,7 @@ module.exports = ({ node, key, value } = {}) => doc => {
 }
 ```
 
-Set some environment variables and configure `gatsby-source-prismic`
+Environment variables and configure `gatsby-source-prismic`
 ```js
 // gatsby-config.js
 
@@ -105,6 +105,7 @@ Then edit some content save and select save in a release, create a new release i
 
 Add the preview path, and release id for use in a development site using either the gatsby cloud ui, dotenv or directly through `gatsby-config.js`.
 
+
 ```js
 // gatsby-config.js
 process.env.PRISMIC_REPO_NAME = process.env.PRISMIC_REPO_NAME || "my-prismic-repository"
@@ -159,7 +160,7 @@ const Previews = ({
 export default Previews
 ```
 
-Conditionally create a preview path when running in development.
+Create a preview path when running in development.
 ```js
 // gatsby-node.js
 const path = require('path');
