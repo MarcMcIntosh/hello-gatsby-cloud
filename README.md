@@ -12,7 +12,7 @@ cd my-awesome-site
 
 npm install --save  \
   prismic-javascript \
-  prismicio/gatsby-source-prismic#release-id-gatsby-cloudd-dist 
+  prismicio/gatsby-source-prismic
 
 mkdir src/schemas src/prismic
 ```
