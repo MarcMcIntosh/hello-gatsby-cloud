@@ -1,17 +1,26 @@
 
 https://www.gatsbyjs.com/docs/managing-environment-variables/
 
+
+#Instruction examples
+https://www.gatsbyjs.com/docs/agility-cms/getting-started/
+https://www.gatsbyjs.com/docs/strapi/getting-started/
+https://www.gatsbyjs.com/docs/kontent/getting-started/
+https://www.gatsbyjs.com/docs/drupal/getting-started/
+https://www.gatsbyjs.com/docs/contentstack/getting-started/
+
+
 #TODO
 [x] Set webhook for build
 [x] set webhook for previews
-[] Previews: the gatsby way
+[x] Previews: the gatsby way
     [] add preview url to prismic (may have to be /)
     [-] add preview route / page
     [-] fetch preview api
     [x] configure webhooks
-    [] preview routes is previews by default in prismic, should this be configurable?
-[] Build
-    [] confifgure webhooks
+    [x] preview routes is previews by default in prismic, should this be configurable?
+[x] Build
+    [x] confifgure webhooks
 [x] Incremental builds
 
 
