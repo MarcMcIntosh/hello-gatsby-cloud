@@ -8,7 +8,7 @@ https://www.gatsbyjs.com/docs/strapi/getting-started/
 https://www.gatsbyjs.com/docs/kontent/getting-started/
 https://www.gatsbyjs.com/docs/drupal/getting-started/
 https://www.gatsbyjs.com/docs/contentstack/getting-started/
-
+https://www.gatsbyjs.com/docs/
 
 #TODO
 [x] Set webhook for build
